@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MY_JDBC_Connection&apos; to &apos;JDBC_CRUD-Mysql-connection&apos;" description="Rename resource &apos;MY_JDBC_Connection&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/MY_JDBC_Connection" name="JDBC_CRUD-Mysql-connection" stamp="1744801355762" updateReferences="true"/>
+</session>

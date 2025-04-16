@@ -1,0 +1,57 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class Jdbc_Demo 
+{
+	public static void main(String [] aa ) throws SQLException {
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/shivam","root","972027");
+			System.out.println(con);
+			PreparedStatement ps = con.prepareStatement("insert into users (firstname,lastname,email,password)values (?,?,?,?)");
+			
+			ps.setString(1, "Kapil");
+			ps.setString(2,"Nishad");
+			ps.setString(3, "bnlv1212@gmail.com");
+			ps.setString(4, "465747568");
+			
+			
+			System.out.println(ps);
+			int no_row=ps.executeUpdate();
+			System.out.println(no_row);
+			if(no_row>0) {
+					System.out.println("User inserted successfully");
+			}
+			
+			String q="delete from users where id=?";
+			PreparedStatement ps2=con.prepareStatement(q);
+			ps2.setInt(1,23);
+			int status=ps2.executeUpdate();
+			System.out.println(status);
+			if(status>0) {
+				System.out.println("User deleted successfully");
+			}else {
+				System.out.println("User does't exist ");
+			}
+			
+			
+			String q3="update users set firstname=boorjesh where id=?";
+			PreparedStatement ps3=con.prepareStatement(q);
+			ps3.setInt(1,3);
+			int status3=ps3.executeUpdate();
+			System.out.println(status);
+			if(status3>0) {
+				
+			}else {
+				System.out.println("User does't exist ");
+			}
+		} catch (ClassNotFoundException e) {
+			
+			e.printStackTrace();
+		}
+	}
+}
