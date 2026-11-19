@@ -1,4 +1,4 @@
-package Day2Loop;
+package Loop;
 import java.util.*;
 public class PrimeNumber {
     

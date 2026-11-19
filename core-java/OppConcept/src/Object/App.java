@@ -1,4 +1,4 @@
-package Day_20_02Object;
+package Object;
 
 public class App {
 	public static void main(String[] args) 
